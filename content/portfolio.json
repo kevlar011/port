@@ -1,0 +1,74 @@
+{
+  "name": "kevlar_011",
+  "role": "3D Artist",
+  "bio": "I make custom 3D models on commission. Characters, props and anything else you can describe.",
+  "discord": "kevlar_011",
+  "avatar": "media/pfp.png",
+  "banner": "media/banner.jpg",
+  "pieces": [
+    {
+      "title": "Overgrown Power Core",
+      "image": "media/work/overgrown-power-core.png"
+    },
+    {
+      "title": "Ocean Egg",
+      "image": "media/work/ocean-egg.jpg"
+    },
+    {
+      "title": "Stylized Goldfish",
+      "image": "media/work/stylized-goldfish.jpg"
+    },
+    {
+      "title": "Dyna-Might?",
+      "image": "media/work/dyna-might.jpg"
+    },
+    {
+      "title": "Bow, Arrow, and Quiver",
+      "image": "media/work/bow-arrow-and-quiver.jpg"
+    },
+    {
+      "title": "Fantasy Battle Knife",
+      "image": "media/work/fantasy-battle-knife.webp"
+    },
+    {
+      "title": "Stylized Shark",
+      "image": "media/work/stylized-shark.jpg"
+    },
+    {
+      "title": "Fruit",
+      "image": "media/work/fruit.jpg"
+    },
+    {
+      "title": "Key of Secrets",
+      "image": "media/work/key-of-secrets.webp"
+    },
+    {
+      "title": "Night Dagger",
+      "image": "media/work/night-dagger.webp"
+    },
+    {
+      "title": "Crystal Core",
+      "image": "media/work/crystal-core.webp"
+    },
+    {
+      "title": "Fantasy Sword",
+      "image": "media/work/fantasy-sword.webp"
+    },
+    {
+      "title": "Ocean Blade",
+      "image": "media/work/ocean-blade.webp"
+    },
+    {
+      "title": "Stylized Stud Treadmills",
+      "image": "media/work/stylized-stud-treadmills.jpg"
+    },
+    {
+      "title": "Stylized LEGO Inspired Sword",
+      "image": "media/work/stylized-lego-inspired-sword.webp"
+    },
+    {
+      "title": "Stylized Pirate Sword",
+      "image": "media/work/stylized-pirate-sword.webp"
+    }
+  ]
+}
