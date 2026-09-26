@@ -10,6 +10,7 @@
   --color-ink-3:    oklch(56% 0.008 85);   /* meta, captions */
   --color-rule:     oklch(23% 0.005 85);
   --color-on-ink:   oklch(16% 0.004 85);   /* text on the light button */
+  --color-banner:   oklch(0% 0 0);         /* matches the black in the banner artwork so its edges vanish */
   --color-scrim:    oklch(8% 0.003 85 / 0.96);
   --color-discord:  oklch(58% 0.2 275);    /* Discord logo mark only */
   --color-focus:    oklch(94% 0.008 85);

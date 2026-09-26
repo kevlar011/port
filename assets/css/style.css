@@ -20,11 +20,12 @@ h1, h2, p { margin: 0; }
 /* ---------- Banner ---------- */
 .banner {
   position: relative;
-  aspect-ratio: 3 / 1; max-height: 26rem; width: 100%;
-  background: var(--color-paper);
+  aspect-ratio: 3 / 1; max-height: 18rem; width: 100%;
+  background: var(--color-banner);
   overflow: hidden;
 }
-.banner img { width: 100%; height: 100%; object-fit: cover; }
+/* contain, not cover: on wide screens the whole banner scales down instead of being cropped */
+.banner img { width: 100%; height: 100%; object-fit: contain; }
 .banner::after {
   content: ""; position: absolute; inset: auto 0 0 0; height: 50%;
   background: linear-gradient(to bottom, transparent, var(--color-paper));
