@@ -16,13 +16,17 @@ try {
   throw err;
 }
 
-/* Banner: falls back to a plain gradient until media/banner.jpg exists. */
+/* Banner and avatar keep the same filename when replaced, so bump
+   assetVersion in portfolio.json to make browsers fetch the new file. */
+const versioned = (path) => (data.assetVersion ? `${path}?v=${data.assetVersion}` : path);
+
+/* Banner: falls back to a plain background until media/banner.jpg exists. */
 const banner = $('#banner');
 if (data.banner) {
   const img = new Image();
   img.alt = '';
   img.onload = () => banner.append(img);
-  img.src = data.banner;
+  img.src = versioned(data.banner);
 }
 
 /* Profile */
@@ -32,7 +36,7 @@ if (data.avatar) {
   const img = new Image();
   img.alt = data.name;
   img.onload = () => { avatar.textContent = ''; avatar.append(img); };
-  img.src = data.avatar;
+  img.src = versioned(data.avatar);
 }
 $('#name').textContent = data.name;
 $('#role').textContent = data.role || '';
