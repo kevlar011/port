@@ -20,7 +20,7 @@ h1, h2, p { margin: 0; }
 /* ---------- Banner ---------- */
 .banner {
   position: relative;
-  aspect-ratio: 3 / 1; max-height: 18rem; width: 100%;
+  aspect-ratio: 3 / 1; max-height: 22.5rem; width: 100%;
   background: var(--color-banner);
   overflow: hidden;
 }
