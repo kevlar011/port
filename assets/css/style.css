@@ -186,17 +186,39 @@ h1, h2, p { margin: 0; }
   .contact-bottom .discord { min-width: 0; width: 100%; }
 }
 
-/* ---------- Developer upload tool (localhost + dev.py only) ---------- */
+/* ---------- Developer editor (localhost + dev.py only) ---------- */
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.dev-add {
+.dev-bar {
   position: fixed; right: var(--space-md); bottom: var(--space-md); z-index: 10;
+  display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2xs);
+  max-width: calc(100% - 2 * var(--space-md));
+}
+.dev-chip {
   display: inline-flex; align-items: center; gap: var(--space-2xs);
   min-height: 2.75rem; padding: 0 var(--space-md); border-radius: var(--radius-pill);
-  background: var(--color-ink); color: var(--color-on-ink); font-weight: 500; white-space: nowrap;
+  background: var(--color-paper-3); color: var(--color-ink); font-weight: 500; white-space: nowrap;
+  box-shadow: 0 0 0 1px var(--color-rule);
   transition: background-color var(--dur-short) var(--ease-out), transform 100ms var(--ease-out);
 }
-.dev-add:hover { background: var(--color-ink-2); }
-.dev-add:active { transform: translateY(1px); }
+.dev-chip:hover { background: var(--color-rule); }
+.dev-chip:active { transform: translateY(1px); }
+.dev-toggle { background: var(--color-ink); color: var(--color-on-ink); box-shadow: none; }
+.dev-toggle:hover { background: var(--color-ink-2); }
+body:not(.dev-editing) .dev-tool { display: none; }
+.dev-editing .piece { cursor: grab; }
+.dev-editing .piece .frame { outline: 1px dashed var(--color-ink-3); outline-offset: 3px; }
+.dev-editing .piece:hover .frame { outline-color: var(--color-ink); }
+.dev-editing .piece:hover img { transform: none; }
+.piece.dev-dragging { opacity: .4; }
+.piece.dev-drop-target .frame { outline: 2px solid var(--color-ink); }
+.dev-thumb { width: 6rem; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-media); }
+.dev-delete { margin-right: auto; color: var(--color-error); display: inline-flex; align-items: center; gap: var(--space-3xs); }
+.dev-delete:hover { background: var(--color-paper-3); }
+.dev-label { font-size: var(--text-sm); color: var(--color-ink-2); }
+.dev-images { display: flex; gap: var(--space-sm); }
+.dev-images .dev-drop { aspect-ratio: 1; height: 6rem; }
+.dev-images .dev-drop-wide { aspect-ratio: 3; height: 6rem; }
+.dev-banner { flex: 1; min-width: 0; }
 .dev-dialog {
   width: min(28rem, calc(100% - 2 * var(--space-sm))); padding: 0; border: 0;
   border-radius: var(--radius-panel); background: var(--color-paper-2); color: var(--color-ink);
@@ -218,11 +240,11 @@ h1, h2, p { margin: 0; }
 .dev-form:has(#dev-file:focus-visible) .dev-drop { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 .dev-field { display: flex; flex-direction: column; gap: var(--space-2xs); }
 .dev-field label { font-size: var(--text-sm); color: var(--color-ink-2); }
-.dev-field input {
+.dev-field input, .dev-field textarea {
   min-height: 2.75rem; padding: 0 var(--space-sm); border-radius: var(--radius-media);
   border: 1px solid var(--color-rule); background: var(--color-paper); color: var(--color-ink); font: inherit;
 }
-.dev-field input:focus { outline: none; border-color: var(--color-ink-2); }
+.dev-field input:focus, .dev-field textarea:focus { outline: none; border-color: var(--color-ink-2); }
 .dev-error { font-size: var(--text-sm); color: var(--color-error); }
 .dev-error:empty { display: none; }
 .dev-actions { display: flex; justify-content: flex-end; gap: var(--space-2xs); }
@@ -236,3 +258,5 @@ h1, h2, p { margin: 0; }
 .dev-save { background: var(--color-ink); color: var(--color-on-ink); }
 .dev-save:hover { background: var(--color-ink-2); }
 .dev-save:disabled { opacity: .6; cursor: progress; }
+.dev-field textarea { padding: var(--space-xs) var(--space-sm); resize: vertical; }
+.dev-dialog { max-height: calc(100dvh - 2 * var(--space-sm)); }
